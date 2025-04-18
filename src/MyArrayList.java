@@ -25,7 +25,6 @@ public class MyArrayList<T> implements IMyList<T> {
         if (length == elements.length) {
             increaseCapacity();
         }
-        // Shift right to free slot at index.
         for (int i = length; i > index; i--) {
             elements[i] = elements[i - 1];
         }
@@ -44,7 +43,6 @@ public class MyArrayList<T> implements IMyList<T> {
         if (length == elements.length) {
             increaseCapacity();
         }
-        // Shift existing elements right.
         for (int i = length; i > 0; i--) {
             elements[i] = elements[i - 1];
         }
@@ -83,7 +81,7 @@ public class MyArrayList<T> implements IMyList<T> {
         for (int i = index; i < length - 1; i++) {
             elements[i] = elements[i + 1];
         }
-        elements[--length] = null; // clear last element
+        elements[--length] = null;
     }
 
     @Override
